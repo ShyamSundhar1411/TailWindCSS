@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html x-data = "{ dark : false }" x-bind:class="dark ? 'dark' : '' " lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -10,17 +10,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js"></script>
 </head>
 
-<body class="bg-mainColor sm:bg-indigo-200 lg:bg-red-400 debug-screens">
-  <div class="container min-h-screen px-6 py-8 mx-auto bg-gray-100">
+<body class="bg-mainColor sm:bg-indigo-200 lg:bg-red-400 debug-screens dark:bg-gray-900">
+  <div class="container min-h-screen px-6 py-8 mx-auto bg-gray-100 custom-container dark:bg-gray-900">
     <section id="header">
+      <button @click= "dark = !dark" class = "px-1 py-1 bg-indigo-400 rounded dark:bg-gray-300"><span x-text="dark ? 'Switch to Light Mode' : 'Switch to Dark Mode' "></span></button>
       <div class = "text-center">
-        <h1 class = "mb-6">Tom Gonzales home training <br> I'll get you in shape!</h1>
+        
+        <h1 class = "">Tom Gonzales home training <br> <spam class = "text-4xl italic text-indigo-400 sm:text-xl"><q>I'll get you in shape!</q></h1></spam>
         <h2>Muscle building • Functional training • Nutritional advice</h2>
       </div>
     </section>
-    <section class = "grid grid-cols-2 gap-5 mt-10 md:gap-10" id="image_services">
+    <section class = "grid w-9/12 grid-cols-2 gap-5 mt-10 md:gap-1 xl:mx-auto" id="image_services">
       <div id="image" class = "ml-auto">
         <img src="img/tom.jpg" alt="Tom Gonzales Online Training">
       </div>
@@ -54,7 +57,7 @@
         <div class = "w-8/12 mx-auto">
           <h2>Prices and payment</h2>
         <p>My most important goal is that you get ahead with your goals.</p>
-        <p>In a free opening session we will discuss what you want to achieve and how much you can or want to spend. Then
+        <p class = "text-justify">In a free opening session we will discuss what you want to achieve and how much you can or want to spend. Then
           we are guaranteed to find a solution that suits you.</p>
         </div>
       </section>
@@ -64,11 +67,11 @@
         <div class = "grid w-8/12 grid-cols-2 mx-auto">
           <div id="email" class = "mr-3">
             <p class = "mb-5">Your message:</p>
-            <a class = 'flex items-center px-4 py-2 transition bg-indigo-400 rounded shadow-md w-m focus:ring-2 hover:bg-indigo-200 hover:shadow-none' href="#"><svg class = "h-4 ml-2 mr-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Send an email</span></a>
+            <a class = 'flex items-center px-4 py-2 transition bg-indigo-400 rounded shadow-md w-m focus:ring-2 hover:bg-indigo-200 hover:shadow-none dark:bg-gray-100' href="#"><svg class = "h-4 ml-2 mr-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Send an email</span></a>
           </div>
           <div id="whatsApp_telefon" class = "ml-3">
             <p class = "mb-6">WhatsApp:</p>
-            1 222 555 44 33
+            <span class = "dark:text-gray-100">1 222 555 44 33</span>
           </div>
         </div>
         </section>
